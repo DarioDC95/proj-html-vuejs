@@ -32,7 +32,6 @@
 
 <style scoped lang="scss">
     @use '../styles/partials/variables.scss'as *;
-    @use '../styles/partials/mixins.scss'as *;
 
     header {
         background-color: $bg-blue;
@@ -60,13 +59,11 @@
             border: none;
             padding: 8px 25px;
             border-radius: 30px;
-            transition: all 5s;
-            @include button-blue;
+            background: $bg-button-blue;
 
             &:hover {
-                @include button-orange;
+                background: $bg-button-orange;
             }
         }
     }
-
 </style>
