@@ -1,0 +1,9 @@
+@use './variables.scss'as *;
+
+@mixin button-header-footer {
+    font-size: $fs-sm;
+    color: $text-white;
+    border: none;
+    border-radius: 30px;
+    background: $bg-lightblue;
+}
