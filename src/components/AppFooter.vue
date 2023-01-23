@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div class="container">
+    <div class="mycontainer">
         <div class="row">
             <div class="col">
                 <div class="card text-end">

@@ -7,12 +7,48 @@
       AppHeader,
       AppMain,
       AppFooter
+    },
+    data() {
+      return {
+        link_menu: [
+          {
+            label: 'Home',
+            url: '#',
+            active: true
+          },
+          {
+            label: 'About',
+            url: '#',
+            active: false
+          },
+          {
+            label: 'Services',
+            url: '#',
+            active: false
+          },
+          {
+            label: 'Blog',
+            url: '#',
+            active: false
+          },
+          {
+            label: 'Contact',
+            url: '#',
+            active: false
+          },
+          {
+            label: 'Portfolio',
+            url: '#',
+            active: false
+          },
+        ],
+      }
     }
   }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader :menu="link_menu" />
   <AppMain />
   <AppFooter />
 </template>

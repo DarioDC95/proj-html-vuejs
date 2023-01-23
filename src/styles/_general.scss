@@ -1,7 +1,20 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.mycontainer {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.list-type-none {
+    list-style-type: none;
+}
+
+.underline-none {
+    text-decoration-line: none;
 }
