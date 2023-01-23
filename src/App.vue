@@ -42,15 +42,67 @@
             active: false
           },
         ],
+        link_footer: [
+          {
+            title: 'Quick Links',
+            links: [
+              {
+                label: 'Services',
+                url: '#'
+              },
+              {
+                label: 'Contact',
+                url: '#'
+              },
+              {
+                label: 'Blog',
+                url: '#'
+              },
+            ]
+          },
+          {
+            title: 'Resources',
+            links: [
+              {
+                label: 'Art Design',
+                url: '#'
+              },
+              {
+                label: 'Computer',
+                url: '#'
+              },
+              {
+                label: 'IT News',
+                url: '#'
+              },
+              {
+                label: 'Networking',
+                url: '#'
+              },
+              {
+                label: 'Web Security',
+                url: 'null#'
+              },
+            ]
+          }
+        ]
+      }
+    },
+    methods: {
+      changeMenu(value) {
+        for(let i = 0; i < this.link_menu.length; i++) {
+          this.link_menu[i].active = false;
+        }
+        this.link_menu[value].active = true;
       }
     }
   }
 </script>
 
 <template>
-  <AppHeader :menu="link_menu" />
+  <AppHeader @selection="changeMenu" :menu="link_menu" />
   <AppMain />
-  <AppFooter />
+  <AppFooter :footerLink="link_footer"/>
 </template>
 
 <style lang="scss">

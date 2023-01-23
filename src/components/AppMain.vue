@@ -5,17 +5,22 @@
 </script>
 
 <template>
-    <div class="mycontainer">
-        <div class="row">
-            <div class="col">
-                <div class="card text-center">
-                    <div>main</div>
+    <main>
+        <div class="mycontainer">
+            <div class="row">
+                <div class="col">
+                    <div class="mycard text-center">
+                        <div>main</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped lang="scss">
-    
+
+main {
+    padding: 200px 0;
+}    
 </style>
