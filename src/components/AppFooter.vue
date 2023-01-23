@@ -112,7 +112,7 @@
 
             .subscribe {
                 padding: 50px 50px;
-                background: $bg-orange;
+                background: $bg-linear-orange;
                 border-radius: 30px;
                 transform: translateY(-50%);
         
@@ -147,10 +147,6 @@
                         button {
                             @include button-header-footer;
                             padding: 12px 30px;
-            
-                            &:hover {
-                                background: $bg-orange;
-                            }
                         }
                     }
                 }

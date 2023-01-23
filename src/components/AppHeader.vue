@@ -59,10 +59,6 @@
         .button-blue {
             @include button-header-footer;
             padding: 8px 25px;
-
-            &:hover {
-                background: $bg-orange;
-            }
         }
     }
 </style>
