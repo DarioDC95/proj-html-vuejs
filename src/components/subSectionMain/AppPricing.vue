@@ -180,14 +180,7 @@
                 background-color: none;
 
                 button {
-                    font-size: $fs-sm;
-                    color: $text-orange;
-                    border: none;
-                    border-radius: 30px;
-                    position: relative;
-                    z-index: 100;
-                    background-color: $bg-white;
-                    display: flex;
+                    @include button-standard($bg-white, $text-orange);
                     padding: 10px 40px;
                 }
             }

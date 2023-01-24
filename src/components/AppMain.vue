@@ -4,7 +4,8 @@
     import AppStartyourproject from './subSectionMain/AppStartyourproject.vue';
     import AppSlider from './subSectionMain/AppSlider.vue';
     import AppPricing from './subSectionMain/AppPricing.vue';
-    import AppLatestPosts from './subSectionMain/AppLatestPosts.vue'
+    import AppLatestPosts from './subSectionMain/AppLatestPosts.vue';
+    import AppTestimonial from './subSectionMain/AppTestimonial.vue';
 
     export default {
         components: {
@@ -14,6 +15,7 @@
             AppSlider,
             AppPricing,
             AppLatestPosts,
+            AppTestimonial,
         }
     }
 </script>
@@ -37,11 +39,14 @@
 
         <!-- latest post -->
         <AppLatestPosts />
+
+        <!-- testimonial -->
+        <AppTestimonial />
     </main>
 </template>
 
 <style scoped lang="scss">
     main {
-        padding-bottom: 200px;
+        padding-bottom: 50px;
     }    
 </style>
