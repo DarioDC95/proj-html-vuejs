@@ -145,7 +145,7 @@
                         right: 0;
         
                         button {
-                            @include button-header-footer;
+                            @include button-linear-gradient($bg-linear-lightblue, $bg-linear-orange);
                             padding: 12px 30px;
                         }
                     }

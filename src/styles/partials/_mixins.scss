@@ -1,6 +1,6 @@
 @use './variables.scss'as *;
 
-@mixin button-header-footer {
+@mixin button-linear-gradient($color1, $color2) {
     font-size: $fs-sm;
     color: $text-white;
     border: none;
@@ -19,7 +19,7 @@
         height: 100%;
         z-index: -100;
         border-radius: 30px;
-        background: $bg-linear-lightblue;
+        background: $color1;
     }
 
     &:after {
@@ -33,8 +33,8 @@
         height: 100%;
         z-index: -100;
         border-radius: 30px;
-        background: $bg-linear-orange;
-        transition: opacity 0.70s;
+        background: $color2;
+        transition: opacity 0.50s;
     }
 
     &:hover {

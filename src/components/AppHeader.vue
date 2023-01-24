@@ -57,7 +57,7 @@
         }
 
         .button-blue {
-            @include button-header-footer;
+            @include button-linear-gradient($bg-linear-lightblue, $bg-linear-orange);
             padding: 8px 25px;
         }
     }
