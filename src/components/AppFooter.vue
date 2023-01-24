@@ -108,7 +108,7 @@
         background-color: $bg-blue;
 
         .up-footer {
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.288);
 
             .subscribe {
                 padding: 50px 50px;
