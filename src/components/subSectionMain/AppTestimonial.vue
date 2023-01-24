@@ -69,8 +69,8 @@
                     </div>
                 </div>
                 <div class="row row-cols-5 brands-row">
-                    <div v-for="(value, index) in cards_brands" :key="index" class="col">
-                        <div class="mycard text-center">
+                    <div v-for="(value, index) in cards_brands" :key="index" class="col d-flex justify-content-center align-items-center">
+                        <div class="mycard">
                             <img :src="value" alt="Logo Brand">
                         </div>
                     </div>
