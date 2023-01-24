@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-6 px-0">
                         <div class="mycard">
-                            <img src="../assets/header.png" alt="Logo Desk">
+                            <img src="../../assets/header.png" alt="Logo Desk">
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
 </template>
 
 <style scoped lang="scss">
-    @use '../styles/partials/variables.scss'as *;
-    @use '../styles/partials/mixins.scss'as *;
+    @use '../../styles/partials/variables.scss'as *;
+    @use '../../styles/partials/mixins.scss'as *;
 
     .business-planning {
             background-color: $bg-blue;

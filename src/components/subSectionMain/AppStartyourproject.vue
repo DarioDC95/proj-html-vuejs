@@ -11,7 +11,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <div class="mycard-img ms-5 d-flex justify-content-end align-items-end">
-                            <img src="../assets/men-data.png" alt="Immagine Data">
+                            <img src="../../assets/men-data.png" alt="Immagine Data">
                         </div>
                     </div>
                     <div class="col-6">
@@ -32,8 +32,8 @@
 </template>
 
 <style scoped lang="scss">
-    @use '../styles/partials/variables.scss'as *;
-    @use '../styles/partials/mixins.scss'as *;
+    @use '../../styles/partials/variables.scss'as *;
+    @use '../../styles/partials/mixins.scss'as *;
 
     .start-project {
         background-color: $bg-blue;
@@ -41,7 +41,7 @@
 
         .mycard-img {
             width: 60%;
-            background-image: url(../assets/nemoodar.png);
+            background-image: url(../../assets/nemoodar.png);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
