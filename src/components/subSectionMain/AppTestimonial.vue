@@ -25,9 +25,9 @@
                 cards_brands: [
                     '/src/assets/client-1-1.png',
                     '/src/assets/clienty-2.png',
-                    '/src/assets/clienty-3.png',
                     '/src/assets/clienty-4.png',
-                    '/src/assets/client-5.png'
+                    '/src/assets/client-5.png',
+                    '/src/assets/clienty-3.png'
                 ]
             }
         }
