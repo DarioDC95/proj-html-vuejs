@@ -44,3 +44,12 @@
         }
     }
 }
+
+@mixin button-standard($color1, $text-color1) {
+    font-size: $fs-sm;
+    color: $text-color1;
+    border: none;
+    border-radius: 30px;
+    background-color: $color1;
+    display: flex;
+}
