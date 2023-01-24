@@ -19,13 +19,19 @@
                 </div>
                 <div class="row content-row">
                     <div class="col-6">
+                        <div class="mycard">
 
+                        </div>
                     </div>
                     <div class="col-3">
+                        <div class="mycard">
 
+                        </div>
                     </div>
                     <div class="col-3">
-                        
+                        <div class="mycard">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
