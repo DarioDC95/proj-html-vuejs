@@ -49,7 +49,7 @@
                                     <img :src="value.image" alt="Logo Group">
                                 </div>
                                 <div class="description">
-                                    <h3 class="mb-4">{{value.title}}</h3>
+                                    <h3 class="fw-bold mb-4">{{value.title}}</h3>
                                     <p class="mb-0">{{value.text}}</p>
                                 </div>
                                 <button><i class="fa-solid fa-arrow-right"></i></button>

@@ -4,6 +4,7 @@
     import AppStartyourproject from './subSectionMain/AppStartyourproject.vue';
     import AppSlider from './subSectionMain/AppSlider.vue';
     import AppPricing from './subSectionMain/AppPricing.vue';
+    import AppLatestPosts from './subSectionMain/AppLatestPosts.vue'
 
     export default {
         components: {
@@ -12,6 +13,7 @@
             AppStartyourproject,
             AppSlider,
             AppPricing,
+            AppLatestPosts,
         }
     }
 </script>
@@ -32,6 +34,9 @@
 
         <!-- pricing -->
         <AppPricing />
+
+        <!-- latest post -->
+        <AppLatestPosts />
     </main>
 </template>
 
