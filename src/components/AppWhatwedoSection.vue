@@ -74,7 +74,7 @@
 
     .what-we-do {
             font-size: $fs-sm;
-            padding: 50px 0;
+            padding: 100px 0;
 
             .title-row {
                 margin-bottom: 200px;
@@ -156,7 +156,13 @@
 
                 button {
                     @include button-linear-gradient($bg-linear-orange, $bg-linear-lightblue);
+                    box-shadow: 0px 0px 50px 0px rgba(188, 42, 110, 0.793);
+                    transition: box-shadow 1s;
                     padding: 10px 50px;
+
+                    &:hover {
+                        box-shadow: 0px 0px 50px 0px rgba(27, 74, 140, 0.792);
+                    }
                 }
             }
         }
