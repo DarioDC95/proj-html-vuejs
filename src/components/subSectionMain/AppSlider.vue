@@ -32,7 +32,40 @@
                         title: 'Landing Page',
                         area: 'Digital Strategy'
                     },
-                ]
+                ],
+                translate: 0,
+            }
+        },
+        created() {
+            
+        },
+        methods: {
+            getColWidth() {
+                let col = document.getElementById('col_Slider-0');
+                const colWidth = col.getBoundingClientRect().width;
+                return colWidth
+            },
+            slideRight() {
+                let width = this.getColWidth();
+                console.log(this.translate < (width * (this.cardsSlider.length - 2)))
+
+                if (this.translate < (width * (this.cardsSlider.length - 3))) {
+                    this.translate += width;
+                    let rowSlider = document.getElementById('rowslider');
+                    rowSlider.style.transform = `translateX(-${this.translate}px)`;
+                    rowSlider.style.transition = "all 1s";
+                }
+            },
+            slideLeft() {
+                let width = this.getColWidth();
+                console.log(this.translate > 0)
+
+                if (this.translate > 0) {
+                    this.translate -= width;
+                    let rowSlider = document.getElementById('rowslider');
+                    rowSlider.style.transform = `translateX(-${this.translate}px)`;
+                    rowSlider.style.transition = "all 1s";
+                }
             }
         }
     }
@@ -45,19 +78,21 @@
                 <div class="mycol-6">
                     <div class="mycard">
                         <div class="top-title fw-semibold">Portfolio</div>
-                        <div class="title mb-5"><span class="fw-bold">latest</span> work</div>
+                        <div class="title"><span class="fw-bold">latest</span> work</div>
                     </div>
                 </div>
-                <div class="mycol-6">
-                    <div class="mycard d-flex align-items-end">
-                        <button class="first-button"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button><i class="fa-solid fa-arrow-right"></i></button>
+                <div class="mycol-6 d-flex align-items-end">
+                    <div class="mycard mb-3 d-flex">
+                        <button @click="slideLeft()" class="first-button"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button @click="slideRight()"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
-            <div class="content-row d-flex">
+            <div id="rowslider" class="content-row d-flex">
                 <div v-for="(value, index) in cardsSlider" :key="index" :id="`col_Slider-${index}`" class="mycol">
-                    <AppCardSlider :element="value"/>
+                    <div class="mycard-container">
+                        <AppCardSlider :element="value"/>
+                    </div>
                 </div>
             </div>
         </div>        
@@ -74,7 +109,7 @@
         background-color: #f6f6f6;
 
         .title-row {
-            margin-bottom: 40px;
+            margin-bottom: 80px;
     
             .top-title {
                 color: $text-red;
@@ -98,7 +133,6 @@
                 background-color: $bg-white;
                 color: $text-orange;
                 font-size: 25px;
-                transform: translateY(50%);
 
                 &:hover {
                     box-shadow: 0px 0px 30px 0px rgba(128, 128, 128, 0.884);
@@ -112,7 +146,7 @@
             position: relative;
 
             .mycol {
-                margin-right: 50px;
+                padding-right: 48px;
             }
         }
     }
