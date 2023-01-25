@@ -36,8 +36,14 @@
                 translate: 0,
             }
         },
-        created() {
+        mounted() {
+            let row = document.querySelector('.title-row');
+            let widthRow = row.getBoundingClientRect().width;
+            let mycardContainer = document.getElementsByClassName('mycard-container');
             
+            for(let i = 0; i < mycardContainer.length; i++) {
+                mycardContainer[i].style.width = `calc((${widthRow}px / 3) - 35px)`;
+            }
         },
         methods: {
             getColWidth() {
@@ -47,24 +53,22 @@
             },
             slideRight() {
                 let width = this.getColWidth();
-                console.log(this.translate < (width * (this.cardsSlider.length - 2)))
 
                 if (this.translate < (width * (this.cardsSlider.length - 3))) {
                     this.translate += width;
                     let rowSlider = document.getElementById('rowslider');
                     rowSlider.style.transform = `translateX(-${this.translate}px)`;
-                    rowSlider.style.transition = "all 1s";
+                    rowSlider.style.transition = "all 0.5s";
                 }
             },
             slideLeft() {
                 let width = this.getColWidth();
-                console.log(this.translate > 0)
 
                 if (this.translate > 0) {
                     this.translate -= width;
                     let rowSlider = document.getElementById('rowslider');
                     rowSlider.style.transform = `translateX(-${this.translate}px)`;
-                    rowSlider.style.transition = "all 1s";
+                    rowSlider.style.transition = "all 0.5s";
                 }
             }
         }
@@ -95,6 +99,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row-circles">
+                <div class="mycol">
+                    <div class="mycard text-center">
+
+                    </div>
+                </div>
+            </div>
         </div>        
     </section>
 </template>
@@ -109,6 +120,7 @@
         background-color: #f6f6f6;
 
         .title-row {
+            width: 100%;
             margin-bottom: 80px;
     
             .top-title {
@@ -147,6 +159,10 @@
 
             .mycol {
                 padding-right: 48px;
+
+                .mycard-container {
+                    height: 100%;
+                }
             }
         }
     }

@@ -23,7 +23,8 @@
     @use '../../styles/partials/mixins.scss'as *;
 
     .mycard {
-        width: 500px;
+        width: 100%;
+        height: 100%;
         border-radius: 40px;
         position: relative;
         background-color: white;
