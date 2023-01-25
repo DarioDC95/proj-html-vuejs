@@ -34,6 +34,7 @@
                     },
                 ],
                 translate: 0,
+                active: 0,
             }
         },
         mounted() {
@@ -99,10 +100,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row-circles">
+            <div class="circles-row">
                 <div class="mycol">
-                    <div class="mycard text-center">
-
+                    <div class="mycard d-flex justify-content-center">
+                        <div v-for="(value, index) in (cardsSlider.length - 2)" :key="index" :id="`circleId-${index}`" class="circle"></div>
                     </div>
                 </div>
             </div>
@@ -115,7 +116,7 @@
     @use '../../styles/partials/mixins.scss'as *;
 
     .slider {
-        padding: 100px 0;
+        padding: 100px 0 70px 0;
         overflow: hidden;
         background-color: #f6f6f6;
 
@@ -155,13 +156,27 @@
         }
 
         .content-row {
-            position: relative;
+            margin-bottom: 100px;
 
             .mycol {
                 padding-right: 48px;
 
                 .mycard-container {
                     height: 100%;
+                }
+            }
+        }
+
+        .circles-row {
+
+            .mycard {
+
+                .circle {
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 10px;
+                    border-radius: 50%;
+                    background-color: lightgrey;
                 }
             }
         }
