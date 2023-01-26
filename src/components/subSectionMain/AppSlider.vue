@@ -45,6 +45,11 @@
             for(let i = 0; i < mycardContainer.length; i++) {
                 mycardContainer[i].style.width = `calc((${widthRow}px / 3) - 35px)`;
             }
+
+            let activeCircle = document.getElementById(`circleId-${this.active}`);
+            activeCircle.style.height = `10px`;
+            activeCircle.style.zIndex = "200";
+            activeCircle.style.background = "linear-gradient(180deg, rgba(188,42,110,1) 0%, rgba(198,52,109,1) 5%, rgba(243,93,107,1) 100%)";
         },
         methods: {
             getColWidth() {
@@ -57,6 +62,21 @@
 
                 if (this.translate < (width * (this.cardsSlider.length - 3))) {
                     this.translate += width;
+
+                    // circle
+                    let Allcircles = document.getElementsByClassName('redCircle');
+                    for(let i = 0; i < Allcircles.length; i++) {
+                        Allcircles[i].style.height = `0px`;
+                        Allcircles[i].style.zIndex = "0";
+                    }
+                    this.active += 1;
+                    let circle = document.getElementById(`circleId-${this.active}`);
+                    console.log(circle.height);
+                    circle.style.height = `10px`;
+                    circle.style.zIndex = "200";
+                    circle.style.background = "linear-gradient(180deg, rgba(188,42,110,1) 0%, rgba(198,52,109,1) 5%, rgba(243,93,107,1) 100%)";
+
+                    // row
                     let rowSlider = document.getElementById('rowslider');
                     rowSlider.style.transform = `translateX(-${this.translate}px)`;
                     rowSlider.style.transition = "all 0.5s";
@@ -67,6 +87,21 @@
 
                 if (this.translate > 0) {
                     this.translate -= width;
+
+                    // circle
+                    let Allcircles = document.getElementsByClassName('redCircle');
+                    for(let i = 0; i < Allcircles.length; i++) {
+                        Allcircles[i].style.height = `0px`;
+                        Allcircles[i].style.zIndex = "0";
+                    }
+                    this.active -= 1;
+                    let circle = document.getElementById(`circleId-${this.active}`);
+                    console.log(circle.height);
+                    circle.style.height = `10px`;
+                    circle.style.zIndex = "200";
+                    circle.style.background = "linear-gradient(180deg, rgba(188,42,110,1) 0%, rgba(198,52,109,1) 5%, rgba(243,93,107,1) 100%)";
+
+                    // row
                     let rowSlider = document.getElementById('rowslider');
                     rowSlider.style.transform = `translateX(-${this.translate}px)`;
                     rowSlider.style.transition = "all 0.5s";
@@ -103,7 +138,9 @@
             <div class="circles-row">
                 <div class="mycol">
                     <div class="mycard d-flex justify-content-center">
-                        <div v-for="(value, index) in (cardsSlider.length - 2)" :key="index" :id="`circleId-${index}`" class="circle"></div>
+                        <div v-for="(value, index) in (cardsSlider.length - 2)" :key="index" class="circle">
+                            <div class="redCircle" :id="`circleId-${index}`"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,7 +213,17 @@
                     height: 10px;
                     margin: 0 10px;
                     border-radius: 50%;
-                    background-color: lightgrey;
+                    background-color: lightgray;
+                    position: relative;
+                    overflow: hidden;
+
+                    .redCircle {
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
+                        transition: all 0.5s;
+                    }
                 }
             }
         }
