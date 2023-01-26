@@ -71,7 +71,6 @@
                     }
                     this.active += 1;
                     let circle = document.getElementById(`circleId-${this.active}`);
-                    console.log(circle.height);
                     circle.style.height = `10px`;
                     circle.style.zIndex = "200";
                     circle.style.background = "linear-gradient(180deg, rgba(188,42,110,1) 0%, rgba(198,52,109,1) 5%, rgba(243,93,107,1) 100%)";
@@ -96,7 +95,6 @@
                     }
                     this.active -= 1;
                     let circle = document.getElementById(`circleId-${this.active}`);
-                    console.log(circle.height);
                     circle.style.height = `10px`;
                     circle.style.zIndex = "200";
                     circle.style.background = "linear-gradient(180deg, rgba(188,42,110,1) 0%, rgba(198,52,109,1) 5%, rgba(243,93,107,1) 100%)";
