@@ -110,14 +110,17 @@
                     &:hover button {
                         opacity: 1;
                     }
+
+                    .mycard {
+                        margin-bottom: -35px;
+                    }
     
                     .img {
                         width: 220px;
                         height: 220px;
                         display: flex;
                         align-items: center;
-                        margin: 0 auto;
-                        transform: translateY(-50%);
+                        margin: -110px auto 0;
                         padding: 20px;
                         background-color: $bg-white;
                         border-radius: 30px;
@@ -129,8 +132,7 @@
     
                     .description {
                         width: 70%;
-                        margin: 0 auto;
-                        margin-top: -90px;
+                        margin: 20px auto 0;
                         color: $text-black;
                     }
     
@@ -143,7 +145,7 @@
                         background: $bg-linear-orange;
                         color: $text-white;
                         font-size: 25px;
-                        transform: translateY(50%);
+                        margin-top: 40px;
     
                         &:hover {
                             box-shadow: 0px 0px 30px 0px rgba(128, 128, 128, 0.884);

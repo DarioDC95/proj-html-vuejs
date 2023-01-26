@@ -47,8 +47,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row gx-5 content-row">
-                    <div v-for="(value, index) in cards_people" :key="index" class="col-4">
+                <div class="myrow d-flex justify-content-between content-row">
+                    <div v-for="(value, index) in cards_people" :key="index" class="mycol-4">
                         <div class="mycard text-center">
                             <div class="img">
                                 <img :src="value.image" alt="Profile">
@@ -109,82 +109,86 @@
         .content-row {
             margin-bottom: 150px;
 
-            .mycard {
-                padding: 0px 35px 40px 35px;
+            .mycol-4 {
+                width: calc((100% - 90px) / 3);
                 border-radius: 30px;
                 transition: all 0.5s;
-
+    
                 &:hover {
                     box-shadow: 0px 0px 50px 0px rgba(128, 128, 128, 0.438);
                 }
 
-                .img {
-                    width: 125px;
-                    height: 125px;
-                    margin: 0 auto;
-                    border: 5px solid #b6256f;
-                    border-radius: 50%;
-                    transform: translateY(-50%);
-
-                    img {
-                        max-width: 100%;
+                .mycard {
+                    padding: 0px 35px 40px 35px;
+                    border-radius: 30px;
+    
+                    .img {
+                        width: 125px;
+                        height: 125px;
+                        margin: -65px auto 0;
+                        border: 5px solid #b6256f;
+                        border-radius: 50%;
+    
+                        img {
+                            max-width: 100%;
+                        }
                     }
-                }
-
-                .stars {
-                    margin-top: -20px;
-                    position: relative;
-                    display: inline-block;
-                    margin-bottom: 2rem;
-
-                    &:before {
-                        content: "\2606\2606\2606\2606\2606";
-                        color: $text-orange;
-                        font-size: 25px;
-                        background: $bg-linear-orange-180dg;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
-
-                    span {
-                        width: 60%;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        overflow: hidden;
-                        white-space: nowrap;
-
+    
+                    .stars {
+                        margin-top: 40px;
+                        position: relative;
+                        display: inline-block;
+                        margin-bottom: 2rem;
+    
                         &:before {
-                            content: "\2605\2605\2605\2605\2605";
+                            content: "\2606\2606\2606\2606\2606";
                             color: $text-orange;
                             font-size: 25px;
                             background: $bg-linear-orange-180dg;
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                         }
-                    }
-
-                    .perpendicular-card {
-                        position: absolute;
-                        top: -8px;
-                        left: 40%;
-                        z-index: -50;
-                        display: flex;
-
-                        .perpendicular {
-                            border-bottom: 60px solid rgba(211, 211, 211, 0.445);
-                            border-left: 0px solid transparent;
-                            border-right: 15px solid transparent;
-                            transform: skew(-20deg);
-                            height: 0;
-                            width: 35px;
-                            margin-right: 10px;
+    
+                        span {
+                            width: 60%;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            overflow: hidden;
+                            white-space: nowrap;
+    
+                            &:before {
+                                content: "\2605\2605\2605\2605\2605";
+                                color: $text-orange;
+                                font-size: 25px;
+                                background: $bg-linear-orange-180dg;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                        }
+    
+                        .perpendicular-card {
+                            position: absolute;
+                            top: -8px;
+                            left: 40%;
+                            z-index: -50;
+                            display: flex;
+    
+                            .perpendicular {
+                                border-bottom: 60px solid rgba(211, 211, 211, 0.445);
+                                border-left: 0px solid transparent;
+                                border-right: 15px solid transparent;
+                                transform: skew(-20deg);
+                                height: 0;
+                                width: 35px;
+                                margin-right: 10px;
+                            }
                         }
                     }
-                }
-
-                .description {
-                    font-size: $fs-sm;
+    
+                    .description {
+                        font-size: $fs-sm;
+                    }
                 }
             }
         }
