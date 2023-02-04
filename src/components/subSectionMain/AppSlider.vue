@@ -35,23 +35,42 @@
                 ],
                 translate: 0,
                 active: 0,
+                rowWindow: 0,
             }
         },
         mounted() {
-            let row = document.querySelector('.title-row');
-            let widthRow = row.getBoundingClientRect().width;
-            let mycardContainer = document.getElementsByClassName('mycard-container');
-            
-            for(let i = 0; i < mycardContainer.length; i++) {
-                mycardContainer[i].style.width = `calc((${widthRow}px / 3) - 35px)`;
-            }
+            this.$nextTick(() => {
+                this.onResize();
+                window.addEventListener('resize', this.onResize);
+            });
+
+            this.$nextTick(() => {
+                this.getCardSize();
+                window.addEventListener('resize', this.getCardSize);
+            })
 
             let activeCircle = document.getElementById(`circleId-${this.active}`);
             activeCircle.style.height = `10px`;
             activeCircle.style.zIndex = "200";
             activeCircle.style.background = "linear-gradient(180deg, rgba(188,42,110,1) 0%, rgba(198,52,109,1) 5%, rgba(243,93,107,1) 100%)";
         },
+        unmounted() {
+            window.removeEventListener('resize', this.onResize); 
+            window.removeEventListener('resize', this.getCardSize); 
+        },
         methods: {
+            onResize() {
+                let row = document.querySelector('.title-row');
+                let widthRow = row.getBoundingClientRect().width;
+                this.rowWindow = widthRow;
+            },
+            getCardSize() {
+                let mycardContainer = document.getElementsByClassName('mycard-container');
+                
+                for(let i = 0; i < mycardContainer.length; i++) {
+                    mycardContainer[i].style.width = `calc((${this.rowWindow}px / 3) - 32px)`;
+                }
+            },
             getColWidth() {
                 let col = document.getElementById('col_Slider-0');
                 const colWidth = col.getBoundingClientRect().width;
@@ -128,7 +147,7 @@
             </div>
             <div id="rowslider" class="content-row d-flex">
                 <div v-for="(value, index) in cardsSlider" :key="index" :id="`col_Slider-${index}`" class="mycol">
-                    <div class="mycard-container">
+                    <div class="mycard-container" style="getInlineCardSize()">
                         <AppCardSlider :element="value"/>
                     </div>
                 </div>
