@@ -237,6 +237,7 @@
                     .redCircle {
                         position: absolute;
                         width: 100%;
+                        height: 0px;
                         bottom: 0;
                         left: 0;
                         transition: all 0.5s;
